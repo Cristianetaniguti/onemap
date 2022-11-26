@@ -7,9 +7,11 @@ copying
 ^NEWS\.md$
 ^vignettes_highres$
 ^\.Rproj\.user$
+^cran-comments\.md$
 
 ^README.md
 ^vignettes_highres
 Dockerfile
 
 ^\.github$
+^CRAN-SUBMISSION$
