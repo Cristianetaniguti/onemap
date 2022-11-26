@@ -639,10 +639,6 @@ function `compare` can be used:
 LG3_comp <- compare(LG3)
 ``` 
 
-```{r, echo=FALSE}
-data(LG3_comp)
-```
-
 **WARNING: This algorithm can take some time to run, depending on marker types in
 the linkage group. If you are working on a personal computer, without high capacity, we recommend using a maximum of ten markers. **
 
@@ -657,9 +653,11 @@ The first argument to the `compare` function is an object of class `sequence` (t
 
 To see the results of the previous step, type:
 
-```{r}
+```{r, eval=FALSE}
 LG3_comp
 ``` 
+
+*NOTE*: Check the [GitHub vignette version](https://statgen-esalq.github.io/tutorials/onemap/Outcrossing_Populations.html) to visualize the results.
 
 Remember that for outcrossing populations, one needs to estimate
 marker order and also linkage phases between markers for a given
@@ -681,7 +679,7 @@ Unless one has some biological information, it is a good idea to
 choose the order with the highest likelihood. The final map can then
 be obtained with the command.
 
-```{r}
+```{r, eval=FALSE}
 LG3_final <- make_seq(LG3_comp, 1, 1)
 ``` 
 
@@ -689,9 +687,13 @@ The first argument is the object of class `compare`. The second argument indicat
 
 For simplicity, these values are defaults, so typing
 
-```{r}
+```{r, eval=FALSE}
 LG3_final <- make_seq(LG3_comp)
 ``` 
+
+```{r, echo=FALSE}
+LG_final <- map(make_seq(twopts, c(43,22,7,18,8,13,44)))
+```
 
 have the same effect.
 

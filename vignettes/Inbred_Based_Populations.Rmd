@@ -1422,10 +1422,8 @@ plot(simParallel)
 
 ```{r, eval=FALSE}
 simParallel <- read_onemap(system.file("extdata/simParall_f2.raw", package = "onemap")) # dataset available only in onemap github version
-plot(simParallel)
 ```
 
-<img src="f2_img/plot.simParallel.jpg" width="300" height="300">
 
 ```{r, eval=FALSE}
 # Calculates two-points recombination fractions
