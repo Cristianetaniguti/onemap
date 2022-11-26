@@ -692,7 +692,7 @@ LG3_final <- make_seq(LG3_comp)
 ``` 
 
 ```{r, echo=FALSE}
-LG_final <- map(make_seq(twopts, c(43,22,7,18,8,13,44)))
+LG3_final <- map(make_seq(twopts, c(43,22,7,18,8,13,44)))
 ```
 
 have the same effect.
