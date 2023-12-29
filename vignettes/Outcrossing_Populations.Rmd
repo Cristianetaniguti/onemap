@@ -1852,9 +1852,9 @@ You can use your built map to map QTL using [`diaQTL`](https://github.com/Cristi
 
 ```{r, eval=FALSE}
 
-all_progeny_haplot <- progeny_haplotypes(list(CHR1_final, 
-                                              CHR2_final,
-                                              CHR3_final), 
+groups_list <- list(CHR1_final,CHR2_final, CHR3_final)
+
+all_progeny_haplot <- progeny_haplotypes(groups_list, 
                                          most_likely = FALSE, 
                                          ind = "all")
 
@@ -1862,6 +1862,31 @@ library(diaQTL)
 convert_onemap(data = all_progeny_haplot, outstem = "example_") # It will generate the diaQTL input files example_diaQTL_geno.csv and example_diaQTL_ped.csv
 ```
 
+# Save heavy OneMap sequences objects
+
+Each OneMap 3.0 sequences object contains all data input. These internal objects do not occupy extra space in R environment, but they can inflate the size of saved objects as RData. If you wish to save OneMap RData objects, use the following function to reduce the file size:
+
+```{r, eval=FALSE}
+groups_list <- list(CHR1_final,CHR2_final, CHR3_final)
+
+save(groups_list, file = "groups_list_large.RData") # 371kb
+
+save_onemap_sequences(groups_list, filename = "groups_list.RData") # 181.9 kb
+```
+
+Use `load_onemap_sequences` to read it back to R environment:
+
+```{r, eval=FALSE}
+# load list of sequences
+groups_list <- load_onemap_sequences("groups_list.RData") 
+
+# recover the onemap data object:
+bins_example <- groups_list[[1]]$data.name
+
+# recover twopoints estimations
+twopts <- groups_list[[1]]$twopt
+
+```
 
 # Session Info
 
