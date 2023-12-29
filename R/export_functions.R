@@ -135,10 +135,10 @@ export_mappoly_genoprob <- function(input.map){
 #'@param filename name of the output file (Ex: my_beautiful_map.RData)
 #'
 #'@export 
-save_onemap_sequences <- function(sequences.list, filename){
+save_onemap_sequences <- function(sequences.list, filename = "onemap_sequences.rds"){
   if(!(inherits(sequences.list,c("list", "sequence")))) stop(deparse(substitute(sequences.list))," is not an object of class 'list' or 'sequence'")
   
-  ## if sequences.list is just a single chormosome, convert it  into a list
+  ## if sequences.list is just a single chromosome, convert it  into a list
   if(inherits(sequences.list,"sequence")) sequences.list<-list(sequences.list)
   
   onemap.obj <- sequences.list[[1]]$data.name
@@ -156,7 +156,7 @@ save_onemap_sequences <- function(sequences.list, filename){
   
   new.list<- list(onemap.obj =onemap.obj, twopts = twopts, sequences.list = sequences.list)
   
-  save(new.list, file = filename)
+  saveRDS(new.list, file = filename)
 }
 
 #' Load list of sequences saved by save_onemap_sequences
@@ -165,8 +165,7 @@ save_onemap_sequences <- function(sequences.list, filename){
 #'
 #'@export
 load_onemap_sequences <- function(filename){
-  temp <- load(filename)
-  map.list <- get(temp)
+  map.list <- readRDS(filename)
   
   if(is.null(names(map.list)) | !all(names(map.list) == c("onemap.obj", "twopts", "sequences.list"))) 
     stop("This file was not saved with save_onemap_sequences.")
