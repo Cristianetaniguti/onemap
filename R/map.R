@@ -317,10 +317,11 @@ map <- function(input.seq,tol=10E-5, verbose=FALSE,
                                  tol=tol)
     idx <- 1
     while(final.map$loglike == -Inf){
+      if(tol.up > 1) stop("The HMM could not converge. Reduce the number of outlier markers")
       idx <- idx + 1
       tol.up <- tol*(idx*10)
       warning("The EM tolerance was increased.")
-      cat(paste0("HMM likelihood returned with this tolerance was -Inf. Tolerance used:", tol.up))
+      cat(paste0("HMM likelihood returned with this tolerance was -Inf. Tolerance used:", tol.up, "\n"))
       final.map <- est_map_hmm_out(geno=t(input.seq$data.name$geno[,seq.num]),
                                    error = input.seq$data.name$error[seq.num + 
                                                                        rep(c(0:(input.seq$data.name$n.ind-1))*input.seq$data.name$n.mar, 
