@@ -142,6 +142,7 @@ combine_onemap <- function(...) {
     segr.type.num <- rep(NA, n.mar)
     CHROM <- rep(NA, n.mar)
     POS <- rep(NA, n.mar)
+    ref_alt_alleles <- matrix(NA, nrow = n.mar, ncol = 4)
     if (n.phe) {
         pheno <- matrix(NA, nrow = n.ind, ncol = n.phe)
     }    else {
@@ -158,8 +159,7 @@ combine_onemap <- function(...) {
         if (sampleID.flag) {
             ## We assume all progeny individuals are in the same order
             ind.matches <- 1:n.ind
-        }
-        else {
+        } else {
             ## Find progeny indices
             ind.matches <- match(rownames(onemap.objs[[i]]$geno), rownames(geno))
         }
@@ -181,6 +181,9 @@ combine_onemap <- function(...) {
         if (!is.null(onemap.objs[[i]]$POS)) {
             POS[mrk.start:mrk.end] <- onemap.objs[[i]]$POS
         }
+        if (!is.null(onemap.objs[[i]]$ref_alt_alleles)) {
+          ref_alt_alleles[mrk.start:mrk.end,1:4] <- as.matrix(onemap.objs[[i]]$ref_alt_alleles)
+        }
         
         cur.n.phe <- onemap.objs[[i]]$n.phe
         phe.end <- phe.start + cur.n.phe - 1
@@ -200,12 +203,19 @@ combine_onemap <- function(...) {
     if (all(is.na(POS))) {
         POS <- NULL
     }
+    if (all(is.na(ref_alt_alleles))) {
+      ref_alt_alleles <- NULL
+    } else {
+      colnames(ref_alt_alleles) <- c("P1_1_allele", "P1_2_allele", "P2_1_allele", "P2_2_allele")
+      rownames(ref_alt_alleles) <- colnames(geno)
+    }
     
     ## Return "onemap" object
     input <- "combined"
     onemap.obj <- structure(list(geno = geno, n.ind = n.ind, n.mar = n.mar,
                    segr.type = segr.type, segr.type.num = segr.type.num,
                    n.phe = n.phe, pheno = pheno, CHROM = CHROM, POS = POS,
+                   ref_alt_alleles = ref_alt_alleles,
                    input = input, error=error),
               class = c("onemap", crosstype))
     

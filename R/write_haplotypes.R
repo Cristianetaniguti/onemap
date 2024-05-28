@@ -521,3 +521,46 @@ plot.onemap_progeny_haplotypes_counts <- function(x,
   p <- ggarrange(plotlist = p, common.legend = T, label.x = 1, ncol = ncol, nrow = round(n.graphics/ncol,0))
   return(p)
 }
+
+#' Wide table format for progeny haplotypes
+#' 
+#' @param input_seq object of class `sequence`
+#' @param character defining the haplotype alleles codification. 
+#'                  If "SNP" the ab code format is replaced by the SNP base, 
+#'                  if the information is available in the input object.
+#' 
+#' @return data.frame with marker, group, map position and haplotype alleles for each individuals in the progeny
+#' 
+#' @importFrom tidyr pivot_wider
+#' 
+#' @export
+progeny_haplotypes_wide_format <- function(input_seq, allele = c("ab", "SNP")){
+  prog <- progeny_haplotypes(input_seq, ind = "all", most_likely = T)
+  prog <- prog[-which(prog$prob == 0),]
+  prog <- data.frame(prog[,-c(5,8)])
+  prog_w <- pivot_wider(prog, names_from = c(ind, parents), values_from = parents.homologs)
+  
+  prog_w <- prog_w[order(prog_w$grp, prog_w$pos),]
+  
+  prog_p1 <- prog_w[, c(1,2,3,grep("P1",colnames(prog_w)))]
+  prog_p2 <- prog_w[, c(grep("P2",colnames(prog_w)))]
+  
+  if(allele == "SNP"){
+    parents_code <- parents_haplotypes(pheno_mapped, ref_alt_alleles = T)
+  } else {
+    parents_code <- parents_haplotypes(pheno_mapped, ref_alt_alleles = F)
+  }
+  
+  for(i in 1:nrow(prog_w)){
+    prog_p1[i,which(prog_p1[i,] == "H1")] <- parents_code[i,5]
+    prog_p1[i,which(prog_p1[i,] == "H2")] <- parents_code[i,6]
+    prog_p2[i,which(prog_p2[i,] == "H1")] <- parents_code[i,7]
+    prog_p2[i,which(prog_p2[i,] == "H2")] <- parents_code[i,8]
+  }
+  
+  result <- cbind(prog_p1, prog_p2)
+  result <- result[,c(1,2,3,order(colnames(result)[4:ncol(result)])+3)]
+  result <- result[order(result$grp, result$pos),]
+  
+  return(result)
+}

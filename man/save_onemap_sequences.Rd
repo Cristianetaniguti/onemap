@@ -4,7 +4,7 @@
 \alias{save_onemap_sequences}
 \title{Save a list of onemap sequence objects}
 \usage{
-save_onemap_sequences(sequences.list, filename)
+save_onemap_sequences(sequences.list, filename = "onemap_sequences.rds")
 }
 \arguments{
 \item{sequences.list}{list of \code{sequence} objects}
