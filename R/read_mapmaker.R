@@ -273,14 +273,14 @@ read_mapmaker<-function (file=NULL, dir=NULL, verbose=TRUE)
                 segr.type[i]<-"M.X"
         }
         segr.type.num[segr.type=="A.H.B"]<-4
-        segr.type.num[segr.type=="C.A"]<-7
-        segr.type.num[segr.type=="D.B"]<-6
+        segr.type.num[segr.type=="C.A"]<-5
+        segr.type.num[segr.type=="D.B"]<-5
         segr.type.num[segr.type=="M.X"]<-0
         # Adapting to change in f2 HMM == out HMM
-        geno[, segr.type=="C.A"][which(geno[, segr.type=="C.A"] == 1)] <- 2 
-        geno[, segr.type=="C.A"][which(geno[, segr.type=="C.A"] == 5)] <- 1 
-        geno[, segr.type=="D.B"][which(geno[, segr.type=="D.B"] == 4)] <- 1 
-        geno[, segr.type=="D.B"][which(geno[, segr.type=="D.B"] == 3)] <- 2 
+        geno[, segr.type=="C.A"][which(geno[, segr.type=="C.A"] == 1)] <- 1 
+        geno[, segr.type=="C.A"][which(geno[, segr.type=="C.A"] == 5)] <- 2 
+        geno[, segr.type=="D.B"][which(geno[, segr.type=="D.B"] == 4)] <- 2 
+        geno[, segr.type=="D.B"][which(geno[, segr.type=="D.B"] == 3)] <- 1 
         geno[is.na(geno)]<-0
     }
     else if(type=="backcross"){
