@@ -145,13 +145,13 @@ codif_data <- function(geno.in, segr.type.in,
                  segr.type.out[i] <- 4
                },
                D.B = {
-                 geno.out[which(geno.in[,i]=="b"),i] <- 1
-                 geno.out[which(geno.in[,i]=="d"),i] <- 2
+                 geno.out[which(geno.in[,i]=="b"),i] <- 2
+                 geno.out[which(geno.in[,i]=="d"),i] <- 1
                  segr.type.out[i] <- 5
                },
                C.A = {
-                 geno.out[which(geno.in[,i]=="a"),i] <- 1
-                 geno.out[which(geno.in[,i]=="c"),i] <- 2
+                 geno.out[which(geno.in[,i]=="a"),i] <- 2
+                 geno.out[which(geno.in[,i]=="c"),i] <- 1
                  segr.type.out[i] <- 5
                }
         )
