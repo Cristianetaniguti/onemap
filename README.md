@@ -1,9 +1,7 @@
 <!-- badges: start -->
-[![Build Status](https://travis-ci.com/Cristianetaniguti/onemap.svg?branch=master)](https://travis-ci.com/Cristianetaniguti/onemap) 
 [![R-CMD-check](https://github.com/Cristianetaniguti/onemap/workflows/R-CMD-check/badge.svg)](https://github.com/Cristianetaniguti/onemap/actions)
 [![Development](https://img.shields.io/badge/development-active-blue.svg)](https://img.shields.io/badge/development-active-blue.svg)
 [![codecov](https://codecov.io/gh/Cristianetaniguti/onemap/branch/master/graph/badge.svg)](https://codecov.io/gh/Cristianetaniguti/onemap)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/onemap)](https://cran.r-project.org/package=onemap)
 [![CRAN_monthly_downloads](https://cranlogs.r-pkg.org/badges/onemap)](https://cranlogs.r-pkg.org/badges/onemap)
   <!-- badges: end -->
   
@@ -11,7 +9,7 @@
 
 **OneMap** is a software tool designed for constructing genetic maps in experimental crosses, including full-sib, recombinant inbred lines (RILs), F2, and backcross populations. It was initially developed by Gabriel R. A. Margarido, Marcelo Mollinari, and A. Augusto F. Garcia, with later contributions from Rodrigo R. Amadeu, Cristiane H. Taniguti, and Getúlio C. Ferreira.  
 
-The software has been available on CRAN since 2007 ([OneMap on CRAN](https://cran.r-project.org/package=onemap)) and has undergone several updates, adding new features and optimizations up to version 3.0.0 in 2024. Future updates will focus solely on maintaining accessibility and functionality. New feature development and optimization efforts are now being directed toward the [MAPpoly](https://github.com/mmollina/MAPpoly) and [MAPpoly2](https://github.com/mmollina/mappoly2) packages.  
+The software has been available on CRAN since 2007 ([OneMap on CRAN](https://cran.r-project.org/package=onemap)) and has undergone several updates, adding new features and optimization up to version 3.0.0 in 2024. Future updates will focus solely on maintaining accessibility and functionality. **New feature development and optimization efforts are now being directed toward the [MAPpoly](https://github.com/mmollina/MAPpoly) and [MAPpoly2](https://github.com/mmollina/mappoly2) packages**.  
 
 **MAPpoly** is a more robust package designed for constructing linkage maps in polyploid species. Its optimized algorithms also provide improved efficiency for diploid species compared to OneMap. Therefore, we recommend using MAPpoly instead of OneMap in the following scenarios for diploid species:  
 
