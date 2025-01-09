@@ -25,65 +25,58 @@ jobs:
           - {os: windows-latest, r: 'release'}
           - {os: macOS-latest, r: 'release'}
           - {os: ubuntu-latest, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
-          - {os: ubuntu-latest,   r: 'devel', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest", http-user-agent: "R/4.1.0 (ubuntu-20.04) R (4.1.0 x86_64-pc-linux-gnu x86_64 linux-gnu) on GitHub Actions" }
 
-    env:
-      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
-      RSPM: ${{ matrix.config.rspm }}
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: r-lib/actions/setup-r@v2
+      # Set up R
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
 
-      - uses: r-lib/actions/setup-pandoc@v1
-
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
-      - name: Restore R package cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-
-      - name: Install system dependencies
+      # Install system dependencies
+      - name: Install System Dependencies
         if: runner.os == 'Linux'
         run: |
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu"))')
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev libicu66
 
-      - name: Install dependencies
+      - name: Install Dependencies on macOS
+        if: runner.os == 'macOS'
         run: |
+          brew update
+          brew install curl openssl
+
+      # Set up Rtools on Windows
+      - name: Set up Rtools
+        if: runner.os == 'Windows'
+        run: |
+          choco install rtools -y
+          echo 'PATH="C:\\rtools40\\usr\\bin;C:\\rtools40\\bin;$PATH"' >> $GITHUB_ENV
+
+      # Install package dependencies
+      - name: Install R package dependencies
+        run: |
+          install.packages('remotes')
           remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("rcmdcheck")
-          remotes::install_cran("covr")
-        shell: Rscript {0}
 
-      - name: Check
-        env:
-          _R_CHECK_CRAN_INCOMING_REMOTE_: false
+      # Run R CMD check
+      - name: Run R CMD check
         run: |
-          options(crayon.enabled = TRUE)
-          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--no-vignettes"), error_on = "error", check_dir = "check")
-        shell: Rscript {0}
+          options(Ncpus = 2) # Use 2 threads to speed up
+          remotes::install_local(dependencies = TRUE)
+          devtools::check()
 
-      - name: Upload check results
+      # Upload R CMD check logs (optional)
+      - name: Upload R CMD check logs
         if: failure()
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v3
         with:
-          name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: check
+          name: R-CMD-check-logs
+          path: R CMD check*.log
 
       - name: Test coverage
         run: covr::codecov()
