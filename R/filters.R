@@ -162,7 +162,7 @@ edit_order_onemap <- function(input.seq){
     ANSWER <- "Y"
     while(substr(ANSWER, 1, 1)  ==  "y" | substr(ANSWER, 1, 1)  ==  "yes" | substr(ANSWER, 1, 1)  ==  "Y" | ANSWER  == ""){
       plot(get_weird$x, get_weird$y, xlab="sequence order", ylab = "Genome position")
-      mks.to.remove <- gatepoints::fhs(get_weird, mark = TRUE)
+      mks.to.remove <- fhs(get_weird, mark = TRUE)
       if(length(which(rownames(get_weird) %in% mks.to.remove)) > 0){
         ANSWER2 <- readline("Enter 'invert/remove' to proceed with the edition: ")
         if(ANSWER2 == "invert"){

@@ -185,3 +185,10 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 * Return parents haplotypes using reference and alternative alleles codification when outcross or f2 cross type
 * Functions to export and import reduced size onemap R objects (save_onemap_sequences and load_onemap_sequences)
 * Add new author (Jeekin Lau :smile: )
+
+# onemap 3.2.0
+
+* Announce about MAPpoly included in the README
+* Fix "subscript out of bounds" warning while running rf_2pts
+* Update vignettes
+* Update tests

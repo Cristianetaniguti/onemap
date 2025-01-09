@@ -18,9 +18,9 @@
 assign(".map.fun",  "kosambi", envir = .onemapEnv)
 # end of file
 
-.onLoad <- function(libname, pkgname){
+.onAttach <- function(libname, pkgname){
   msg <- paste(
-    "\n\nAfter version 3.0.0 OneMap updates has been solely for maintaining accessibility and functionality. 
+    "\n\nAfter version 3.2.0 OneMap updates has been solely for maintaining accessibility and functionality. 
     New feature development and optimization efforts are now being directed toward the 
     MAPpoly (https://github.com/mmollina/MAPpoly) and MAPpoly2 (https://github.com/mmollina/mappoly2) packages.\n\n",
     

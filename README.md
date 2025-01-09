@@ -9,7 +9,7 @@
 
 **OneMap** is a software tool designed for constructing genetic maps in experimental crosses, including full-sib, recombinant inbred lines (RILs), F2, and backcross populations. It was initially developed by Gabriel R. A. Margarido, Marcelo Mollinari, and A. Augusto F. Garcia, with later contributions from Rodrigo R. Amadeu, Cristiane H. Taniguti, and Getúlio C. Ferreira.  
 
-The software has been available on CRAN since 2007 ([OneMap on CRAN](https://cran.r-project.org/package=onemap)) and has undergone several updates, adding new features and optimization up to version 3.0.0 in 2024. Future updates will focus solely on maintaining accessibility and functionality. **New feature development and optimization efforts are now being directed toward the [MAPpoly](https://github.com/mmollina/MAPpoly) and [MAPpoly2](https://github.com/mmollina/mappoly2) packages**.  
+The software has been available on CRAN since 2007 ([OneMap on CRAN](https://cran.r-project.org/package=onemap)) and has undergone several updates, adding new features and optimization up to version 3.2.0 in 2024. Future updates will focus solely on maintaining accessibility and functionality. **New feature development and optimization efforts are now being directed toward the [MAPpoly](https://github.com/mmollina/MAPpoly) and [MAPpoly2](https://github.com/mmollina/mappoly2) packages**.  
 
 **MAPpoly** is a more robust package designed for constructing linkage maps in polyploid species. Its optimized algorithms also provide improved efficiency for diploid species compared to OneMap. Therefore, we recommend using MAPpoly instead of OneMap in the following scenarios for diploid species:  
 
@@ -74,13 +74,13 @@ You can read _OneMap_ tutorials going to the vignettes of the
 installed package, or clicking below. Please, start with the overview,
 that will guide you through other chapters.
 
-1. [Overview](https://cristianetaniguti.github.io/onemap/docs/Overview.html)
+1. [Overview](https://cristianetaniguti.github.io/onemap/Overview.html)
 
-2. [Introduction to R](https://cristianetaniguti.github.io/onemap/docs/Introduction_R.html)
+2. [Introduction to R](https://cristianetaniguti.github.io/onemap/Introduction_R.html)
 
-3. [How to build a linkage map for inbred-bases populations (F2, RIL and BC)](https://cristianetaniguti.github.io/onemap/docs/Inbred_Based_Populations.html)
+3. [How to build a linkage map for inbred-bases populations (F2, RIL and BC)](https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html)
 
-4. [How to build a linkage map for outcrossing populations](https://cristianetaniguti.github.io/onemap/docs/Outcrossing_Populations.html)
+4. [How to build a linkage map for outcrossing populations](https://cristianetaniguti.github.io/onemap/Outcrossing_Populations.html)
 
 # How to cite
 
