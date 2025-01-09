@@ -364,7 +364,7 @@ check_data <- function(x){
   }
   
   test[8] <- if(inherits(x, "f2")) {
-    !all(unique(x$segr.type.num) %in% c(4,6,7))
+    !all(unique(x$segr.type.num) %in% c(4,5))
   } else if(inherits(x, "outcross")){
     !all(unique(x$segr.type.num) %in% 1:7)
   } else if(inherits(x, "backcross")){

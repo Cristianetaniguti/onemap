@@ -287,6 +287,115 @@ create_depths_profile(onemap.obj = vcf_example_out,
 
 Because the genotypes are from VCF file, the legend points the VCF codification? `./.` represent missing data; `0/0` homozygotes for reference alleles; `0/1` heterozygotes; `1/1` homozygotes for alternative alleles. You can also have phased genotypes represented which have pipe `|` instead of bar `/`.
 
+## Set genotypes probabilities <span style="color:orange">(new!)</span>
+
+By default, `OneMap` sets a error probability of $10^{-5}$ for every genotype:
+
+```{r}
+head(vcf_example_out$error)
+```
+
+See [Taniguti et. al, 2023](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad092/7330892) Supplementary File 1 for details about the `$error` object format.
+
+For markers from sequencing technology, this value is unrealistic and generates inflated linkage maps. `OneMap` 3.0 can consider three types of genotype probabilities to consider error in the HMM chain. A single global value (global_error), a matrix with dimensions (number of individuals) x (number of markers) with genotypes errors values (genotypes_errors), and a matrix with dimensions (number of individuals)*(number of markers) x possible genotypes (genotypes_probs). See details in the function `create_probs`:
+
+```{r, eval=FALSE}
+?create_probs
+```
+
+If you have a VCF file,  you can use the function `extract_depth` to obtain the genotypes_errors and genotypes_probs from the GQ or PL or GL format field:
+
+```{r}
+library(vcfR)
+vcfR_object <- read.vcfR(system.file("extdata/vcf_example_out.vcf.gz", package = "onemap"))
+
+genotypes_errors <- extract_depth(vcfR.object = vcfR_object,
+                                  onemap.object=vcf_example_out,
+                                  vcf.par= "GQ",
+                                  parent1="P1",
+                                  parent2="P2",
+                                  recovering=FALSE)
+
+genotypes_errors[10:50, 1:5]
+```
+
+```{r}
+onemap_obj_errors <- create_probs(vcf_example_out, genotypes_errors = genotypes_errors)
+head(onemap_obj_errors$error)
+```
+
+```{r}
+genotypes_probs <- extract_depth(vcfR_object, 
+                                 vcf_example_out, 
+                                 vcf.par = "PL", 
+                                 parent1 = "P1", 
+                                 parent2 = "P2")
+
+genotypes_probs[1:5, ]
+```
+
+```{r}
+onemap_obj_probs <- create_probs(vcf_example_out, genotypes_probs = genotypes_probs)
+head(onemap_obj_probs$error)
+```
+
+According to results from Reads2Map using a global error rate can be the best solution in most cases. However, the software probabilities are useful to filter markers before starting the linkage map building:
+
+```{r}
+hist(genotypes_errors) # Check distribution to define threshold - it will change according to the software used for genotype calling
+summary(as.vector(genotypes_errors))
+
+onemap_obj_prob_filt <- filter_prob(onemap_obj_probs, threshold = 0.9)
+```
+
+Now, we can set the genotype probabilities according to the selected global error:
+
+```{r, eval=FALSE}
+onemap_obj_global_err <- create_probs(onemap_obj_prob_filt, global_error = 0.075)
+```
+
+Note: This section is included solely to demonstrate the possibility of adjusting the error probability. This adjustment is not applied in subsequent steps of this tutorial.
+
+## Read multiallelic markers from VCF <span style="color:orange">(new!)</span>
+
+If you have multiallelic markers (MNPs) in your VCF file, set the `only_biallelics` to `FALSE`. Here, we have the multiallelic markers in a separated file:
+
+```{r, eval=FALSE}
+onemap_obj_multi <- onemap_read_vcfR("roses_populations.haps.new.names.vcf", parent1 = "PH", parent2 = "J14-3", cross = "outcross", only_biallelic = FALSE) # Example data not available
+
+onemap_obj_multi
+```
+
+```
+6659 Markers were removed of the dataset because one or both of parents have no informed genotypes (are missing data)
+8351 Markers were removed from the dataset because both of parents are homozygotes, these markers are considered non-informative in outcrossing populations.
+
+This is an object of class 'onemap'
+Type of cross:      outcross 
+No. individuals:    138 
+No. markers:        7991 
+CHROM information:  yes 
+POS information:    yes 
+Percent genotyped:  81 
+
+Segregation types:
+A.1 -->  830
+A.2 -->  1891
+B3.7 -->  548
+D1.10 -->  1949
+D1.9 -->  673
+D2.14 -->  641
+D2.15 -->  1459
+
+No. traits:         0 
+```
+
+This one does not have genotype probabilities information and erroneous multiallelic markers can generate higher impact in the map quality. Therefore, we will use a global error rate of 0.1 for them (value also defined using Reads2Map workflows):
+
+```{r, eval=FALSE}
+onemap_obj_multi <- create_probs(onemap_obj_multi, global_error = 0.1)
+```
+
 # Combining `OneMap` datasets
 
 If you have more than one dataset of markers, all from the same mapping population, you can use the function `combine_onemap` to merge them into only one `onemap` object.
@@ -1773,6 +1882,28 @@ ggsave(p, filename = "map.jpg")
 <img src="out_img/map.jpg" width="500" height="400">
 
 As you can see in the above maps, heuristic ordering algorithms do not return an optimal order result, mostly if you don't have many individuals in your population. Because of the erroneous order, generated map size is not close to the simulated size (100 cM) and their heatmaps don't present the expected color pattern. Two of them get close to the color pattern, they are the ug and the MDS method. They present the right global ordering but not local. If you have a reference genome, you can use its position information to rearrange the local order.
+
+# A Simpler and More Efficient Way to Save OneMap R Objects for Future Use
+
+OneMap is designed with a nested object structure, ensuring that every `sequence` object contains all the necessary information to reproduce your analysis. While this structure enhances recoverability and organization, it can lead to significantly large objects when saving your data. To address this, we have developed functions to streamline and optimize the saving process.
+
+```{r, eval=FALSE}
+my_sequences <- list(CHR1_final, CHR2_final, CHR3_final)
+
+save_onemap_sequences(my_sequences, filename = "out_final_sequences.RData")
+
+my_sequences <- load_onemap_sequences("out_final_sequences.RData")
+
+# access the sequences
+my_sequences[[1]]
+
+# access the onemap object
+onemap.obj <- my_sequences[[1]]$data.name
+
+# access the twopoints object
+onemap.obj <- my_sequences[[1]]$twopt
+```
+
 
 # Export estimated parents haplotypes 
 
