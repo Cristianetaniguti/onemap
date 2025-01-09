@@ -48,7 +48,7 @@ Author: Gabriel Margarido [aut], Marcelo Mollinari [aut],
         Katharine Preedy [ctb, cph] (MDS ordering algorithm), 
         Bastian Schiffthaler [ctb, cph] (HMM parallelization),
         Augusto Garcia [aut, ctb]
-LinkingTo: Rcpp (>= 0.10.5)
+LinkingTo: Rcpp (>= 1.0.0)
 Depends: R (>= 3.6.0)
 Imports: ggplot2 (>= 2.2.1), 
         plotly (>= 4.7.1),
