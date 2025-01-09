@@ -13,3 +13,4 @@ copying
 Dockerfile
 
 ^\.github$
+^docs$

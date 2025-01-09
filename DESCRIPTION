@@ -10,15 +10,14 @@ Description: Analysis of molecular marker data from model (backcrosses,
     approaches using hidden Markov models.
 Authors@R: c(person("Gabriel", 
                     "Margarido", 
-                    role = "aut",
-                    email = "gramarga@usp.br"), 
+                    role = "aut"), 
              person("Marcelo", 
                     "Mollinari", 
                     role = "aut"), 
              person("Cristiane", 
                     "Taniguti", 
                     role=c("ctb", "cre"), 
-                    email="chtaniguti@tamu.edu"),
+                    email="cht47@cornell.edu"),
              person("Getulio", 
                     "Ferreira", 
                     role="ctb"),
@@ -81,7 +80,7 @@ Encoding: UTF-8
 License: GPL-3
 URL: https://github.com/augusto-garcia/onemap
 BugReports: https://github.com/augusto-garcia/onemap/wiki
-Maintainer: Cristiane Taniguti <chtaniguti@tamu.edu>
+Maintainer: Cristiane Taniguti <cht47@cornell.edu>
 Repository: CRAN
 Packaged: 2019-09-22 22:25:43 UTC; cris
 NeedsCompilation: yes

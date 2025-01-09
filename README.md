@@ -25,7 +25,6 @@ However, **OneMap** remains the best choice if you have:
 
 For guidance on best practices in building linkage maps while accounting for genotyping errors, please refer to [this publication](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad092/7330892).  
 
-
 # How to install
 
 ## From CRAN (stable version)
@@ -66,7 +65,7 @@ you will need Xcode (available on the App Store).
 Then, to install `OneMap` from GitHub (this very repo):
 
 ```R
-install_github("augusto-garcia/onemap")
+install_github("Cristianetaniguti/onemap")
 ```
 
 ## From docker hub
@@ -91,15 +90,13 @@ You can read _OneMap_ tutorials going to the vignettes of the
 installed package, or clicking below. Please, start with the overview,
 that will guide you through other chapters.
 
-1. [Overview](https://statgen-esalq.github.io/tutorials/onemap/Overview.html)
+1. [Overview](https://cristianetaniguti.github.io/onemap/docs/Overview.html)
 
-2. [Introduction to R](https://statgen-esalq.github.io/tutorials/onemap/Introduction_R.html)
+2. [Introduction to R](https://cristianetaniguti.github.io/onemap/docs/Introduction_R.html)
 
-3. [How to build a linkage map for inbred-bases populations (F2, RIL and BC)](https://statgen-esalq.github.io/tutorials/onemap/Inbred_Based_Populations.html)
+3. [How to build a linkage map for inbred-bases populations (F2, RIL and BC)](https://cristianetaniguti.github.io/onemap/docs/Inbred_Based_Populations.html)
 
-4. [How to build a linkage map for outcrossing populations](https://statgen-esalq.github.io/tutorials/onemap/Outcrossing_Populations.html)
-
-5. [A guide to build high-density linkage maps](https://cristianetaniguti.github.io/Tutorials/onemap/Quick_HighDens/High_density_maps.html)
+4. [How to build a linkage map for outcrossing populations](https://cristianetaniguti.github.io/onemap/docs/Outcrossing_Populations.html)
 
 # How to cite
 
