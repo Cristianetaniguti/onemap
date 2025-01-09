@@ -45,25 +45,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev libicu66
 
-     - name: Install Dependencies on macOS
-        if: runner.os == 'macOS'
-        run: |
-          brew update
-          brew install curl openssl
-          
-      - name: Set up Rtools
-        if: runner.os == 'Windows'
-        run: |
-          choco install rtools -y
-          echo 'PATH="C:\\rtools40\\usr\\bin;C:\\rtools40\\bin;$PATH"' >> $GITHUB_ENV
-
       - name: Query dependencies
         run: |
           install.packages('remotes')
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
-s
+
       - name: Restore R package cache
         uses: actions/cache@v2
         with:
