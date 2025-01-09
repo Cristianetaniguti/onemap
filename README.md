@@ -68,22 +68,6 @@ Then, to install `OneMap` from GitHub (this very repo):
 install_github("Cristianetaniguti/onemap")
 ```
 
-## From docker hub
-
-`OneMap` requires several dependencies that you may not have in your system. To overcome the need of installing all of them, you can use the `OneMap` image in the docker hub. Install docker (see more about [here](https://docs.docker.com/get-started/)) and use:
-
-```bash
-docker pull cristaniguti/onemap_git:latest
-```
-
-The `OneMap` image already has the RStudio from rocker image, you can run it in your favorite browser running the following command:
-
-```bash
-docker run -p 8787:8787 -v $(pwd):/home/rstudio/ -e DISABLE_AUTH=true cristaniguti/onemap_git
-```
-
-This will make the container available in port 8787 (choose other if you prefer). The `-v` argument includes directories of your computer, in this case, the current directory (pwd) to the container. You can use `-v` several times to include several directories. After, you just need to go to your favorite browser and search for <your_localhost>:8787 (example 127.0.0.1:8787). That is it! Everything you need is there.
-
 # Tutorials
 
 You can read _OneMap_ tutorials going to the vignettes of the
