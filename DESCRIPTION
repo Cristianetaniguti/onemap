@@ -79,7 +79,7 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 License: GPL-3
 URL: https://github.com/cristianetaniguti/onemap
-BugReports: https://github.com/cristianetaniguti/onemap/wiki
+BugReports: https://github.com/Cristianetaniguti/onemap/issues
 Maintainer: Cristiane Taniguti <cht47@cornell.edu>
 Repository: CRAN
 Packaged: 2019-09-22 22:25:43 UTC; cris
