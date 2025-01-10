@@ -16,3 +16,5 @@ Dockerfile
 ^docs$
 ^.*\.DS_Store$
 ^tests$
+^CRAN-SUBMISSION$
+^cran-comments\.md$

@@ -295,7 +295,7 @@ By default, `OneMap` sets a error probability of $10^{-5}$ for every genotype:
 head(vcf_example_out$error)
 ```
 
-See [Taniguti et. al, 2023](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad092/7330892) Supplementary File 1 for details about the `$error` object format.
+See Taniguti et. al, 2023 Supplementary File 1 for details about the `$error` object format.
 
 For markers from sequencing technology, this value is unrealistic and generates inflated linkage maps. `OneMap` 3.0 can consider three types of genotype probabilities to consider error in the HMM chain. A single global value (global_error), a matrix with dimensions (number of individuals) x (number of markers) with genotypes errors values (genotypes_errors), and a matrix with dimensions (number of individuals)*(number of markers) x possible genotypes (genotypes_probs). See details in the function `create_probs`:
 
@@ -2021,6 +2021,8 @@ computation of F1 linkage maps in outcrossing species. **_PLoS ONE_**,
 
 Tan, Y., Fu, Y. A novel method for estimating linkage maps.
 **_Genetics_** 173, 2383-2390, 2006.
+
+Taniguti, C. H.; Taniguti, L. M.; Amadeu, R. R.; Lau, J.; de Siqueira Gesteira, G.; Oliveira, T. de P.; Ferreira, G. C.; Pereira, G. da S.;  Byrne, D.;  Mollinari, M.; Riera-Lizarazu, O.; Garcia, A. A. F. Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps. GigaScience, 12, giad092. https://doi.org/10.1093/gigascience/giad092
 
 Van Os H, Stam P, Visser R.G.F., Van Eck H.J. RECORD: a novel method
 for ordering loci on a genetic linkage map. **_Theor Appl Genet_**
