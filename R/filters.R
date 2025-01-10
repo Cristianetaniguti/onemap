@@ -13,6 +13,8 @@
 ##                                                                     ##
 #######################################################################
 
+globalVariables(c("fhs"))
+
 ## Function filter markers by missing data
 
 ##' Filter markers according with a missing data threshold
