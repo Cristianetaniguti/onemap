@@ -14,3 +14,5 @@ Dockerfile
 
 ^\.github$
 ^docs$
+^.*\.DS_Store$
+^tests$

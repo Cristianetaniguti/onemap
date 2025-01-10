@@ -35,7 +35,7 @@ understand its functionality and start using it. You do not need to be
 an expert in R to build your linkage map, but some concepts are
 necessary and will help you through the process.
 
-There is a GitHub `OneMap` version which is continuously improved, we strongly recommend all users to try [this version](https://github.com/augusto-garcia/onemap).  On `augusto-garcia/onemap` GitHub page you can find instructions to install the package from GitHub and also more fancy tutorials.
+There is a GitHub `OneMap` version which is continuously improved, we strongly recommend all users to try [this version](https://github.com/cristianetaniguti/onemap).  On `cristianetaniguti/onemap` GitHub page you can find instructions to install the package from GitHub and also more fancy tutorials.
 
 # Creating the data file
 
