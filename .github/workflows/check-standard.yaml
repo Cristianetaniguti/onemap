@@ -12,7 +12,6 @@ on:
       - cran_submission
       - cran_v3.2.0
 
-
 name: R-CMD-check
 
 jobs:
