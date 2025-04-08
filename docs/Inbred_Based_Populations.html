@@ -12,7 +12,7 @@
 
 <meta name="author" content="Statistical Genetics Lab   Department of Genetics   Luiz de Queiroz College of Agriculture   University of São Paulo" />
 
-<meta name="date" content="2025-02-28" />
+<meta name="date" content="2025-04-08" />
 
 <title>Inbred Based Populations</title>
 
@@ -41,6 +41,107 @@ ul.task-list{list-style: none;}
 
 
 
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -241,12 +342,107 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h4 class="author"><a href="http://statgen.esalq.usp.br">Statistical
 Genetics Lab</a> <br /> Department of Genetics <br /> Luiz de Queiroz
 College of Agriculture <br /> University of São Paulo</h4>
-<h4 class="date">2025-02-28</h4>
+<h4 class="date">2025-04-08</h4>
 
 
 
-<p><strong>Please, access this vignette at</strong>:</p>
-<p><a href="https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html" class="uri">https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html</a></p>
+<p><strong><a href="https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html">Access
+the complete version of this vignette here</a></strong></p>
+<p>To have access to all example datasets. Install <code>onemap</code>
+from GitHub and run the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#install.packages(&quot;devtools&quot;) ## if you do not have it installed</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;cristianetaniguti/onemap&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#&gt; Using GitHub PAT from the git credential store.</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co">#&gt; Downloading GitHub repo cristianetaniguti/onemap@HEAD</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co">#&gt; pillar       (1.10.1 -&gt; 1.10.2) [CRAN]</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co">#&gt; stringi      (1.8.4  -&gt; 1.8.7 ) [CRAN]</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co">#&gt; Rdpack       (2.6.2  -&gt; 2.6.3 ) [CRAN]</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co">#&gt; MatrixModels (0.5-3  -&gt; 0.5-4 ) [CRAN]</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co">#&gt; nloptr       (2.2.0  -&gt; 2.2.1 ) [CRAN]</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co">#&gt; lme4         (1.1-36 -&gt; 1.1-37) [CRAN]</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co">#&gt; broom        (1.0.7  -&gt; 1.0.8 ) [CRAN]</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co">#&gt; xfun         (0.51   -&gt; 0.52  ) [CRAN]</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#&gt; knitr        (1.49   -&gt; 1.50  ) [CRAN]</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">#&gt; tzdb         (0.4.0  -&gt; 0.5.0 ) [CRAN]</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co">#&gt; Hmisc        (5.2-2  -&gt; 5.2-3 ) [CRAN]</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co">#&gt; later        (1.4.1  -&gt; 1.4.2 ) [CRAN]</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co">#&gt; Installing 12 packages: pillar, stringi, Rdpack, MatrixModels, nloptr, lme4, broom, xfun, knitr, tzdb, Hmisc, later</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="co">#&gt; Installing packages into &#39;/Users/cht47/Library/R/arm64/4.4/library&#39;</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="co">#&gt; (as &#39;lib&#39; is unspecified)</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="co">#&gt; Warning: unable to access index for repository https://bioconductor.org/packages/3.18/bioc/bin/macosx/big-sur-arm64/contrib/4.4:</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="co">#&gt;   cannot open URL &#39;https://bioconductor.org/packages/3.18/bioc/bin/macosx/big-sur-arm64/contrib/4.4/PACKAGES&#39;</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="co">#&gt; Warning: unable to access index for repository https://bioconductor.org/packages/3.18/data/annotation/bin/macosx/big-sur-arm64/contrib/4.4:</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="co">#&gt;   cannot open URL &#39;https://bioconductor.org/packages/3.18/data/annotation/bin/macosx/big-sur-arm64/contrib/4.4/PACKAGES&#39;</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="co">#&gt; Warning: unable to access index for repository https://bioconductor.org/packages/3.18/data/experiment/bin/macosx/big-sur-arm64/contrib/4.4:</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="co">#&gt;   cannot open URL &#39;https://bioconductor.org/packages/3.18/data/experiment/bin/macosx/big-sur-arm64/contrib/4.4/PACKAGES&#39;</span></span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a><span class="co">#&gt; Warning: unable to access index for repository https://bioconductor.org/packages/3.18/workflows/bin/macosx/big-sur-arm64/contrib/4.4:</span></span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a><span class="co">#&gt;   cannot open URL &#39;https://bioconductor.org/packages/3.18/workflows/bin/macosx/big-sur-arm64/contrib/4.4/PACKAGES&#39;</span></span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="co">#&gt; Warning: unable to access index for repository https://bioconductor.org/packages/3.18/books/bin/macosx/big-sur-arm64/contrib/4.4:</span></span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="co">#&gt;   cannot open URL &#39;https://bioconductor.org/packages/3.18/books/bin/macosx/big-sur-arm64/contrib/4.4/PACKAGES&#39;</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a><span class="co">#&gt; The downloaded binary packages are in</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a><span class="co">#&gt;  /var/folders/0v/yvmmxrp55jxdjsky45t_cmt40000gp/T//Rtmp7vPFFe/downloaded_packages</span></span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a><span class="co">#&gt; ── R CMD build ─────────────────────────────────────────────────────────────────</span></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="co">#&gt;      checking for file ‘/private/var/folders/0v/yvmmxrp55jxdjsky45t_cmt40000gp/T/Rtmp7vPFFe/remotes109ee3286cabd/Cristianetaniguti-onemap-855cbe7/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/0v/yvmmxrp55jxdjsky45t_cmt40000gp/T/Rtmp7vPFFe/remotes109ee3286cabd/Cristianetaniguti-onemap-855cbe7/DESCRIPTION’</span></span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a><span class="co">#&gt;   ─  preparing ‘onemap’:</span></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a><span class="co">#&gt;   ─  cleaning src</span></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a><span class="co">#&gt;   ─  looking to see if a ‘data/datalist’ file should be added</span></span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a><span class="co">#&gt;   ─  building ‘onemap_3.2.0.tar.gz’</span></span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a><span class="co">#&gt;      </span></span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a><span class="co">#&gt; Installing package into &#39;/Users/cht47/Library/R/arm64/4.4/library&#39;</span></span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a><span class="co">#&gt; (as &#39;lib&#39; is unspecified)</span></span></code></pre></div>
+<p>Starting in version 2.0-0, <code>OneMap</code> can also deal with
+inbred-based populations, that is, populations that have homozygous
+parental lines in the genealogy (F2s, backcrosses, and RILs). As a
+consequence, linkage phases do not need to be estimated. Since version
+2.3.0, phases are estimated for F2 populations to properly generate
+progeny haplotypes not only the recombination fraction.</p>
+<p>In this vignette, we explain how to proceed with the analysis in an
+F2 population. The same procedure can be used for backcrosses and RILs
+as well, and therefore users should not have any difficulty in analyzing
+their data. However, there are a number of differences from genetic
+mapping in outcrossing species; please read the proper vignette.</p>
+<p>If you are not familiar with <code>R</code>, we recommend first the
+reading of vignette <a href="https://cristianetaniguti.github.io/onemap/Introduction_R.html">Introduction
+to R</a>. You do not need to be an expert in R to build your linkage
+map, but some concepts are necessary and will help you through the
+process.</p>
+<p>The software has been available on CRAN since 2007 (<a href="https://cran.r-project.org/package=onemap">OneMap on CRAN</a>) and
+has undergone several updates, adding new features and optimization up
+to version 3.2.0 in 2024. Future updates will focus solely on
+maintaining accessibility and functionality. <strong>New feature
+development and optimization efforts are now being directed toward the
+<a href="https://github.com/mmollina/MAPpoly">MAPpoly</a> and <a href="https://github.com/mmollina/mappoly2">MAPpoly2</a>
+packages</strong>.</p>
+<p><strong>MAPpoly</strong> is a more robust package designed for
+constructing linkage maps in polyploid species. Its optimized algorithms
+also provide improved efficiency for diploid species compared to OneMap.
+Therefore, we recommend using MAPpoly instead of OneMap in the following
+scenarios for diploid species:</p>
+<ul>
+<li>When working with only biallelic markers (e.g., SNPs).<br />
+</li>
+<li>For outcrossing full-sib (F1), F2, or backcross populations.<br />
+</li>
+<li>For datasets with a large number of markers (&gt;5,000).<br />
+</li>
+<li>For multi-population datasets (e.g., progeny from multiple parents;
+see MAPpoly2).</li>
+</ul>
+<p>However, <strong>OneMap</strong> remains the best choice if you
+have:</p>
+<ul>
+<li>Populations derived from recombinant inbred lines (RILs).<br />
+</li>
+<li>Datasets with multiallelic or dominant markers.</li>
+</ul>
+<p>For guidance on best practices in building linkage maps while
+accounting for genotyping errors, please refer to Taniguti et. al
+2023.</p>
 
 
 

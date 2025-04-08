@@ -25,6 +25,14 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 **[Access the complete version of this vignette here](https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html)**
 
+To have access to all example datasets. Install `onemap` from GitHub and run the following command:
+
+```{r}
+#install.packages("devtools") ## if you do not have it installed
+devtools::install_github("cristianetaniguti/onemap")
+```
+
+
 Starting in version 2.0-0, `OneMap` can also deal with inbred-based
 populations, that is, populations that have homozygous parental lines in
 the genealogy (F2s, backcrosses, and RILs). As a consequence, linkage

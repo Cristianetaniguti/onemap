@@ -12,7 +12,7 @@
 
 <meta name="author" content="Statistical Genetics Lab   Department of Genetics   Luiz de Queiroz College of Agriculture   University of São Paulo" />
 
-<meta name="date" content="2025-02-28" />
+<meta name="date" content="2025-04-08" />
 
 <title>Outcrossing Populations</title>
 
@@ -41,6 +41,107 @@ ul.task-list{list-style: none;}
 
 
 
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -241,12 +342,61 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h4 class="author"><a href="http://statgen.esalq.usp.br">Statistical
 Genetics Lab</a> <br /> Department of Genetics <br /> Luiz de Queiroz
 College of Agriculture <br /> University of São Paulo</h4>
-<h4 class="date">2025-02-28</h4>
+<h4 class="date">2025-04-08</h4>
 
 
 
-<p><strong>Please, access this vignette at</strong>:</p>
-<p><a href="https://cristianetaniguti.github.io/onemap/Outcrossing_Populations.html" class="uri">https://cristianetaniguti.github.io/onemap/Outcrossing_Populations.html</a></p>
+<p><strong><a href="https://cristianetaniguti.github.io/onemap/Outcrossing_Populations.html">Access
+the complete version of this vignette here</a></strong></p>
+<p>To have access to all example datasets. Install <code>onemap</code>
+from GitHub and run the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#install.packages(&quot;devtools&quot;) ## if you do not have it installed</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;cristianetaniguti/onemap&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#&gt; Using GitHub PAT from the git credential store.</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co">#&gt; Skipping install of &#39;onemap&#39; from a github remote, the SHA1 (855cbe73) has not changed since last install.</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span></code></pre></div>
+<p>The following example is intended to show the usage of
+<code>OneMap</code> functions for linkage mapping in outcrossing
+(non-inbred) populations. With basic knowledge of R syntax, one should
+have no problems using it. If you are not familiar with R, we recommend
+reading the vignette <a href="https://statgen-esalq.github.io/tutorials/onemap/Introduction_R.html">Introduction
+to R</a>.</p>
+<p>Hopefully, these examples will be clear enough to help any user to
+understand its functionality and start using it. You do not need to be
+an expert in R to build your linkage map, but some concepts are
+necessary and will help you through the process.</p>
+<p>The software has been available on CRAN since 2007 (<a href="https://cran.r-project.org/package=onemap">OneMap on CRAN</a>) and
+has undergone several updates, adding new features and optimization up
+to version 3.2.0 in 2024. Future updates will focus solely on
+maintaining accessibility and functionality. <strong>New feature
+development and optimization efforts are now being directed toward the
+<a href="https://github.com/mmollina/MAPpoly">MAPpoly</a> and <a href="https://github.com/mmollina/mappoly2">MAPpoly2</a>
+packages</strong>.</p>
+<p><strong>MAPpoly</strong> is a more robust package designed for
+constructing linkage maps in polyploid species. Its optimized algorithms
+also provide improved efficiency for diploid species compared to OneMap.
+Therefore, we recommend using MAPpoly instead of OneMap in the following
+scenarios for diploid species:</p>
+<ul>
+<li>When working with only biallelic markers (e.g., SNPs).<br />
+</li>
+<li>For outcrossing full-sib (F1), F2, or backcross populations.<br />
+</li>
+<li>For datasets with a large number of markers (&gt;5,000).<br />
+</li>
+<li>For multi-population datasets (e.g., progeny from multiple parents;
+see MAPpoly2).</li>
+</ul>
+<p>However, <strong>OneMap</strong> remains the best choice if you
+have:</p>
+<ul>
+<li>Populations derived from recombinant inbred lines (RILs).<br />
+</li>
+<li>Datasets with multiallelic or dominant markers.</li>
+</ul>
+<p>For guidance on best practices in building linkage maps while
+accounting for genotyping errors, please refer to Taniguti et. al
+2023.</p>
 
 
 

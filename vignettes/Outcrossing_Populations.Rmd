@@ -26,6 +26,13 @@ library(onemap)
 
 **[Access the complete version of this vignette here](https://cristianetaniguti.github.io/onemap/Outcrossing_Populations.html)**
 
+To have access to all example datasets. Install `onemap` from GitHub and run the following command:
+
+```{r}
+#install.packages("devtools") ## if you do not have it installed
+devtools::install_github("cristianetaniguti/onemap")
+```
+
 The following example is intended to show the usage of `OneMap`
 functions for linkage mapping in outcrossing (non-inbred) populations.
 With basic knowledge of R syntax, one should have no problems using
