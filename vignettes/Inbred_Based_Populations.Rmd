@@ -22,7 +22,52 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 ```
 
-**Please, access this vignette at**:
 
-https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html 
+**[Access the complete version of this vignette here](https://cristianetaniguti.github.io/onemap/Inbred_Based_Populations.html)**
+
+Starting in version 2.0-0, `OneMap` can also deal with inbred-based
+populations, that is, populations that have homozygous parental lines in
+the genealogy (F2s, backcrosses, and RILs). As a consequence, linkage
+phases do not need to be estimated. Since version 2.3.0, phases are estimated 
+for F2 populations to properly generate progeny haplotypes not only the 
+recombination fraction.
+
+In this vignette, we explain how to proceed with the analysis in an F2
+population. The same procedure can be used for backcrosses and RILs as
+well, and therefore users should not have any difficulty in analyzing
+their data. However, there are a number of differences from genetic
+mapping in outcrossing species; please read the proper vignette.
+
+If you are not familiar with `R`, we recommend first the reading of
+vignette
+[Introduction to R](https://cristianetaniguti.github.io/onemap/Introduction_R.html).
+You do not need to be an expert in R to build your linkage map, but
+some concepts are necessary and will help you through the process.
+
+The software has been available on CRAN since 2007 
+([OneMap on CRAN](https://cran.r-project.org/package=onemap)) and has 
+undergone several updates, adding new features and optimization up to version 3.2.0 in 2024. 
+Future updates will focus solely on maintaining accessibility and functionality. 
+**New feature development and optimization efforts are now being directed toward the 
+[MAPpoly](https://github.com/mmollina/MAPpoly) and 
+[MAPpoly2](https://github.com/mmollina/mappoly2) packages**.  
+
+**MAPpoly** is a more robust package designed for constructing linkage maps
+ in polyploid species. Its optimized algorithms also provide improved efficiency for 
+diploid species compared to OneMap. Therefore, we recommend using MAPpoly instead 
+of OneMap in the following scenarios for diploid species:  
+
+- When working with only biallelic markers (e.g., SNPs).  
+- For outcrossing full-sib (F1), F2, or backcross populations.  
+- For datasets with a large number of markers (>5,000).  
+- For multi-population datasets (e.g., progeny from multiple parents; see MAPpoly2).  
+
+However, **OneMap** remains the best choice if you have:  
+
+- Populations derived from recombinant inbred lines (RILs).  
+- Datasets with multiallelic or dominant markers.  
+
+For guidance on best practices in building linkage maps while accounting for genotyping 
+errors, please refer to Taniguti et. al 2023.  
+
 
