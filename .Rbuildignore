@@ -4,7 +4,6 @@ todo
 copying
 ^\.travis\.yml$
 ^.*\.Rproj$
-^NEWS\.md$
 ^vignettes_highres$
 ^\.Rproj\.user$
 
