@@ -40,15 +40,6 @@ An object of class \code{sequence}, which is a list
 Creates a new sequence by adding markers from a predetermined
   one. The markers are added in the end of the sequence.
 }
-\examples{
-data(onemap_example_out)
-twopt <- rf_2pts(onemap_example_out)
-all_mark <- make_seq(twopt,"all")
-groups <- group(all_mark)
-(LG1 <- make_seq(groups,1))
-(LG.aug<-add_marker(LG1, c(4,7)))
-
-}
 \seealso{
 \code{\link[onemap]{drop_marker}}
 }

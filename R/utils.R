@@ -587,13 +587,6 @@ rf_snp_filter_onemap <- function(input.seq, thresh.LOD.rf = 5, thresh.rf = 0.15,
 ##'
 ##' @seealso \code{\link[onemap]{drop_marker}}
 ##'
-##' @examples
-##' data(onemap_example_out)
-##' twopt <- rf_2pts(onemap_example_out)
-##' all_mark <- make_seq(twopt,"all")
-##' groups <- group(all_mark)
-##' (LG1 <- make_seq(groups,1))
-##' (LG.aug<-add_marker(LG1, c(4,7)))
 ##'
 ##' @export
 add_marker<-function(input.seq, mrks)
