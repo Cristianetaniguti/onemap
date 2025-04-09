@@ -37,9 +37,6 @@ List of 8
 
 \examples{
 data(mapmaker_example_f2)
-
-# perform two-point analyses
-twopts <- rf_2pts(mapmaker_example_f2)
-twopts
+plot(mapmaker_example_f2)
 }
 \keyword{datasets}
