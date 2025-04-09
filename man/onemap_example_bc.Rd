@@ -37,8 +37,7 @@ List of 10
 data(onemap_example_bc)
 
 # perform two-point analyses
-twopts <- rf_2pts(onemap_example_bc)
-twopts
+plot(onemap_example_bc)
 }
 \author{Marcelo Mollinari, \email{mmollina@usp.br}}
 \seealso{

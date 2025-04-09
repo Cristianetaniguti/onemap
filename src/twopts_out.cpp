@@ -104,8 +104,8 @@ Rcpp::List est_rf_out(Rcpp::NumericVector geno,
       for(int j=a3; j  < n_mar; j++)
 	{
 	  ct1++;
-	  std::vector<int> k_sub(&geno[i*n_ind],&geno[i*n_ind+n_ind-1]);
-	  std::vector<int> k1_sub(&geno[j*n_ind],&geno[j*n_ind+n_ind-1]);
+	  std::vector<int> k_sub(&geno[i*n_ind],&geno[i*n_ind+n_ind]);
+	  std::vector<int> k1_sub(&geno[j*n_ind],&geno[j*n_ind+n_ind]);
 	  std::fill(n.begin(), n.end(), 0);
 	  std::fill(r.begin(), r.end(), 0);
 	  for(int k=0; k < n_ind; k++)

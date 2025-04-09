@@ -99,8 +99,9 @@ Rcpp::NumericMatrix est_rf_bc(Rcpp::NumericVector geno, int mrk,
 	{
 	  ct1++;
 	  nr=mis=0;
-	  std::vector<int> k_sub(&geno[i*n_ind],&geno[i*n_ind+n_ind-1]);
-	  std::vector<int> k1_sub(&geno[j*n_ind],&geno[j*n_ind+n_ind-1]);
+	  std::vector<int> k_sub(&geno[i*n_ind],&geno[i*n_ind+n_ind]);
+	  std::vector<int> k1_sub(&geno[j*n_ind],&geno[j*n_ind+n_ind]);
+	  
 	  for(int k=0; k < n_ind; k++)
 	    {
 	      if(k_sub[k]==0 || k1_sub[k]==0) mis++;
