@@ -389,11 +389,6 @@ check_data <- function(x){
 #'         vector with a number of tests, where \code{TRUE} indicates
 #'         a failed test.
 #'         
-#' @examples 
-#' 
-#' data(onemap_example_bc)
-#' twopts <- rf_2pts(onemap_example_bc)
-#' check_twopts(twopts)
 #' 
 #' @author Cristiane Taniguti, \email{chtaniguti@@tamu.edu}
 #' 

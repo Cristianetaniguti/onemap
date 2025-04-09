@@ -17,13 +17,6 @@ if consistent, returns 0. If not consistent, returns a
 \description{
 Based on MAPpoly check_data_sanity function by Marcelo Mollinari
 }
-\examples{
-
-data(onemap_example_bc)
-twopts <- rf_2pts(onemap_example_bc)
-check_twopts(twopts)
-
-}
 \author{
 Cristiane Taniguti, \email{chtaniguti@tamu.edu}
 }
