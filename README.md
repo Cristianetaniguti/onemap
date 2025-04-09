@@ -1,7 +1,7 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/Cristianetaniguti/onemap/workflows/R-CMD-check/badge.svg)](https://github.com/Cristianetaniguti/onemap/actions)
 [![Development](https://img.shields.io/badge/development-inactive-darkblue.svg)](https://img.shields.io/badge/development-inactive-darkblue.svg)
-[![codecov](https://codecov.io/gh/Cristianetaniguti/onemap/branch/master/graph/badge.svg)](https://codecov.io/gh/Cristianetaniguti/onemap)
+[![codecov](https://codecov.io/gh/Cristianetaniguti/onemap/graph/badge.svg?token=1TVRQKM67J)](https://codecov.io/gh/Cristianetaniguti/onemap)
 [![CRAN_monthly_downloads](https://cranlogs.r-pkg.org/badges/onemap)](https://cranlogs.r-pkg.org/badges/onemap)
   <!-- badges: end -->
   
