@@ -11,10 +11,6 @@
 * Correcting documentation not compiling for RMarkdown
 * Updating dependencies for other R packages
 
-# onemap 2.0.6
-
-* (To be included)
-
 # onemap 2.0.7
 
 * Updating .travis.yml for the newer standards
@@ -77,7 +73,7 @@
 * mds_onemap function
 * Vignette update
 
-# onemap.2.1.2
+# onemap 2.1.2
 
 * Submitted to CRAN
 
@@ -161,10 +157,6 @@
 * Replacing is by inherits to fix issues in R dev versions
 
 # onemap 3.0.0
-
-* New preprint including OneMap updates: 
-
-Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira, S., Riera-Lizarazu, O., Lau, J., Byrne, D., de Siqueira Gesteira, G., De, T., Oliveira, P., Ferreira, G. C., &; Franco Garcia, A. A.  Developing best practices for genotyping-by-sequencing analysis using linkage maps as benchmarks. BioRxiv. https://doi.org/10.1101/2022.11.24.517847
 
 * Functions to filter markers based on two-points estimations: filter_2pts_gaps and rf_snp_filter_onemap
 * Optimization of find_bins and map_avoid_unlinked
