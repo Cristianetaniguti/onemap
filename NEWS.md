@@ -77,7 +77,7 @@
 * mds_onemap function
 * Vignette update
 
-# onemap.2.1.2
+# onemap 2.1.2
 
 * Submitted to CRAN
 
