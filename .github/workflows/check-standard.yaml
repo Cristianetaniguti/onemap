@@ -54,7 +54,5 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
       
       - name: Test coverage
-        uses: codecov/codecov-action@4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: codecov/codecov-demo
+        run: covr::codecov()
+        shell: Rscript {0}
