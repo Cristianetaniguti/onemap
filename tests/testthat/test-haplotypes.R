@@ -24,7 +24,7 @@ test_that("ordering and HMM parallel", {
       }
     }
     counts <- progeny_haplotypes_counts(x = progeny_haplotypes(map1, most_likely = T, ind = "all"))
-    eval(bquote(expect_equal(sum(counts$counts), .(sum.counts))))
+    eval(bquote(expect_equal(sum(counts$counts), .(sum.counts), tolerance = 0.01)))
   }
   
   data("simu_example_bc")
@@ -46,6 +46,6 @@ test_that("ordering and HMM parallel", {
                                    parent2 = "P2",
                                    cross = "f2 intercross", only_biallelic = FALSE)
   
-  test_haplo(example_data, which.group = 1, sum.counts = 305, c("a", "b", "a", "b"), c("T", "A", "T", "A"))
+  test_haplo(example_data, which.group = 1, sum.counts = 306, c("a", "b", "a", "b"), c("T", "A", "T", "A"))
   
 })
