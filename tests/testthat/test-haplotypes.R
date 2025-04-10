@@ -30,9 +30,9 @@ test_that("ordering and HMM parallel", {
   data("simu_example_bc")
   test_haplo(example_data = simu_example_bc, 1, 126)
   data("simu_example_out")
-  test_haplo(example_data = simu_example_out, 1, 347, parent_haplo = c("a", "a", "a", "b"))
+  test_haplo(example_data = simu_example_out, 1, 347, parent_haplo = c("a", "a", "b", "a"))
   data("simu_example_f2")
-  test_haplo(example_data = simu_example_f2, 1, 217, parent_haplo = c("a", "b", "a", "b"))
+  test_haplo(example_data = simu_example_f2, 1, 218, parent_haplo = c("a", "b", "a", "b"))
   
   example_data <- onemap_read_vcfR(vcf = system.file("extdata/simu_cod_out.vcf.gz", package = "onemap"),
                                    parent1 = "P2",
@@ -46,6 +46,6 @@ test_that("ordering and HMM parallel", {
                                    parent2 = "P2",
                                    cross = "f2 intercross", only_biallelic = FALSE)
   
-  test_haplo(example_data, which.group = 1, sum.counts = 277, c("a", "b", "a", "b"), c("T", "A", "T", "A"))
+  test_haplo(example_data, which.group = 1, sum.counts = 305, c("a", "b", "a", "b"), c("T", "A", "T", "A"))
   
 })

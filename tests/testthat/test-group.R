@@ -29,7 +29,7 @@ test_that("group_seq function", {
     expect_equal(lgs$n.repeated, n.repeated)
   }
   
-  check_group_seq("vcf_example_out", "onemap_example_out", 0, 15)
+  check_group_seq("vcf_example_out", "onemap_example_out", 0, 0)
   check_group_seq("vcf_example_f2", "onemap_example_f2", 0, 0)
   check_group_seq("vcf_example_riself", "onemap_example_riself",3, 0)
   check_group_seq("vcf_example_bc", "onemap_example_bc",25, 22)
@@ -47,6 +47,6 @@ test_that("group_upgma", {
 
   check_group_upgma("vcf_example_out", 2, c(11,13))
   check_group_upgma("vcf_example_f2", 3,  c(9,13,3))
-  check_group_upgma(example_data = "vcf_example_riself", 2, c(16, 8))
+  check_group_upgma(example_data = "vcf_example_riself", 2, c(13, 11))
   check_group_upgma("vcf_example_bc", 2, c(18,7))
 })

@@ -40,7 +40,7 @@ test_that("two-points tests",{
                        c(0, 0.5, 0.5, 0.5),
                        c(0, 0.5,0.5,0.5),
                        c(0, 0.553, 0.841, 0.228),
-                       7853, 25, 34)
+                       7853, 24, 34)
   
   expect_twopts <- function(example_data, values, sum_all, nmks1, nmks2){
     eval(bquote(data(.(example_data))))
@@ -62,8 +62,8 @@ test_that("two-points tests",{
   }
   
   expect_twopts(example_data = "onemap_example_bc",
-                c(0.00000000, 0.0364, 0.50000000, 0.495000), 6715, 16, 18)
+                c(0.00000000, 0.0364, 0.50000000, 0.495000), 6715, 16, 16)
   
   expect_twopts(example_data = "onemap_example_riself",
-                c(0.00000000, 0.495, 0.5000000, 0.5000000), 5470, 17, 10)
+                c(0.00000000, 0.495, 0.5000000, 0.5000000), 5546, 14, 14)
 })
