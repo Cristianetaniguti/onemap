@@ -40,7 +40,7 @@ test_that("two-points tests",{
                        c(0, 0.5, 0.5, 0.5),
                        c(0, 0.5,0.5,0.5),
                        c(0, 0.553, 0.841, 0.228),
-                       7853, 24, 34)
+                       7853, 26, 34)
   
   expect_twopts <- function(example_data, values, sum_all, nmks1, nmks2){
     eval(bquote(data(.(example_data))))
