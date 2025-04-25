@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - main
-      - cran_submission
-      - cran_v3.2.0
+      - cran_v3.2.1
   pull_request:
     branches:
       - main
-      - cran_submission
-      - cran_v3.2.0
+      - cran_v3.2.1
 
 name: R-CMD-check
 
