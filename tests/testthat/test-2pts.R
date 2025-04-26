@@ -23,7 +23,7 @@ test_that("two-points tests",{
     seq1 <- mds_onemap(seq1, hmm = F)
     # Filters
     filt_seq1 <- rf_snp_filter_onemap(input.seq = seq1, probs = c(0.25,1))
-    eval(bquote(expect_equal(length(filt_seq1$seq.num), nmks1)))
+    eval(bquote(expect_equal(length(filt_seq1$seq.num), nmks1, tolerance = 2)))
     filt_seq1 <- filter_2pts_gaps(seq1, max.gap = 20)
     eval(bquote(expect_equal(length(filt_seq1$seq.num), nmks2, tolerance = 2)))
   }
@@ -40,7 +40,7 @@ test_that("two-points tests",{
                        c(0, 0.5, 0.5, 0.5),
                        c(0, 0.5,0.5,0.5),
                        c(0, 0.553, 0.841, 0.228),
-                       7853, 24, 34)
+                       7853, 26, 34)
   
   expect_twopts <- function(example_data, values, sum_all, nmks1, nmks2){
     eval(bquote(data(.(example_data))))

@@ -126,7 +126,7 @@ Schiffthaler, B., Bernhardsson, C., Ingvarsson, P. K., &; Street, N. R. (2017). 
 
 # References
 
-Broman K. W., Sen Ś., 2009. A Guide to QTL Mapping with R/qtl.
+Broman K. W., Sen S., 2009. A Guide to QTL Mapping with R/qtl.
 Springer, New York.
 
 Wang S., Basten, C. J. and Zeng Z.-B. Windows QTL Cartographer 2.5.
