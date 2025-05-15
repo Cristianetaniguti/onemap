@@ -2,7 +2,10 @@
 [![R-CMD-check](https://github.com/Cristianetaniguti/onemap/workflows/R-CMD-check/badge.svg)](https://github.com/Cristianetaniguti/onemap/actions)
 [![Development](https://img.shields.io/badge/development-inactive-darkblue.svg)](https://img.shields.io/badge/development-inactive-darkblue.svg)
 [![codecov](https://codecov.io/gh/Cristianetaniguti/onemap/graph/badge.svg?token=1TVRQKM67J)](https://codecov.io/gh/Cristianetaniguti/onemap)
-[![CRAN_monthly_downloads](https://cranlogs.r-pkg.org/badges/onemap)](https://cranlogs.r-pkg.org/badges/onemap)
+[![CRAN version](https://www.r-pkg.org/badges/version/onemap)](https://CRAN.R-project.org/package=onemap)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/onemap)](https://CRAN.R-project.org/package=onemap)
+[![License: GPL v3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
   <!-- badges: end -->
   
 # OneMap <img src="https://user-images.githubusercontent.com/7572527/119237022-0b19a400-bb11-11eb-9d45-228a59f22a1a.png" align="right" width="200"/>
