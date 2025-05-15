@@ -193,7 +193,10 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 * Update vignettes
 * Update tests
 
+# onemap 3.2.1
+
+* Fix c++ error in clang-ASAN and gcc-ASAN systems
+
 # onemap 3.2.2
 
 * Update citation
-

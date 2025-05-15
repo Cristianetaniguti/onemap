@@ -35,33 +35,7 @@ understand its functionality and start using it. You do not need to be
 an expert in R to build your linkage map, but some concepts are
 necessary and will help you through the process.
 
-There is a GitHub `OneMap` version which is continuously improved, we strongly recommend all users to try [this version](https://github.com/cristianetaniguti/onemap). 
-
-The software has been available on CRAN since 2007 
-([OneMap on CRAN](https://cran.r-project.org/package=onemap)) and has 
-undergone several updates, adding new features and optimization up to version 3.2.0 in 2024. 
-Future updates will focus solely on maintaining accessibility and functionality. 
-**New feature development and optimization efforts are now being directed toward the 
-[MAPpoly](https://github.com/mmollina/MAPpoly) and 
-[MAPpoly2](https://github.com/mmollina/mappoly2) packages**.  
-
-**MAPpoly** is a more robust package designed for constructing linkage maps
- in polyploid species. Its optimized algorithms also provide improved efficiency for 
-diploid species compared to OneMap. Therefore, we recommend using MAPpoly instead 
-of OneMap in the following scenarios for diploid species:  
-
-- When working with only biallelic markers (e.g., SNPs).  
-- For outcrossing full-sib (F1), F2, or backcross populations.  
-- For datasets with a large number of markers (>5,000).  
-- For multi-population datasets (e.g., progeny from multiple parents; see MAPpoly2).  
-
-However, **OneMap** remains the best choice if you have:  
-
-- Populations derived from recombinant inbred lines (RILs).  
-- Datasets with multiallelic or dominant markers.  
-
-For guidance on best practices in building linkage maps while accounting for genotyping 
-errors, please refer to Taniguti et. al 2023.  
+There is a GitHub `OneMap` version which is continuously improved, we strongly recommend all users to try [this version](https://github.com/augusto-garcia/onemap).  On `augusto-garcia/onemap` GitHub page you can find instructions to install the package from GitHub and also more fancy tutorials.
 
 # Creating the data file
 
@@ -321,7 +295,7 @@ By default, `OneMap` sets a error probability of $10^{-5}$ for every genotype:
 head(vcf_example_out$error)
 ```
 
-See Taniguti et. al, 2023 Supplementary File 1 for details about the `$error` object format.
+See [Taniguti et. al, 2023](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad092/7330892) Supplementary File 1 for details about the `$error` object format.
 
 For markers from sequencing technology, this value is unrealistic and generates inflated linkage maps. `OneMap` 3.0 can consider three types of genotype probabilities to consider error in the HMM chain. A single global value (global_error), a matrix with dimensions (number of individuals) x (number of markers) with genotypes errors values (genotypes_errors), and a matrix with dimensions (number of individuals)*(number of markers) x possible genotypes (genotypes_probs). See details in the function `create_probs`:
 
@@ -2047,8 +2021,6 @@ computation of F1 linkage maps in outcrossing species. **_PLoS ONE_**,
 
 Tan, Y., Fu, Y. A novel method for estimating linkage maps.
 **_Genetics_** 173, 2383-2390, 2006.
-
-Taniguti, C. H.; Taniguti, L. M.; Amadeu, R. R.; Lau, J.; de Siqueira Gesteira, G.; Oliveira, T. de P.; Ferreira, G. C.; Pereira, G. da S.;  Byrne, D.;  Mollinari, M.; Riera-Lizarazu, O.; Garcia, A. A. F. Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps. GigaScience, 12, giad092. https://doi.org/10.1093/gigascience/giad092
 
 Van Os H, Stam P, Visser R.G.F., Van Eck H.J. RECORD: a novel method
 for ordering loci on a genetic linkage map. **_Theor Appl Genet_**
