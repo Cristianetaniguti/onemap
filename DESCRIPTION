@@ -1,6 +1,6 @@
 Package: onemap
 Title: Construction of Genetic Maps in Experimental Crosses
-Version: 3.2.1
+Version: 3.2.2
 Description: Analysis of molecular marker data from model and non-model systems. 
     For the later, it allows statistical analysis by simultaneously estimating 
     linkage and linkage phases (genetic map construction) according to Wu and 

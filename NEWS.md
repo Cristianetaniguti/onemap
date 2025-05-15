@@ -192,3 +192,8 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 * Fix "subscript out of bounds" warning while running rf_2pts
 * Update vignettes
 * Update tests
+
+# onemap 3.2.2
+
+* Update citation
+
