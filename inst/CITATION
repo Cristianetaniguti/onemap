@@ -1,11 +1,11 @@
 citHeader("When using OneMap, please choose and cite appropriately:")
 
 ## 1. OneMap original paper
-citEntry(
-  entry   = "Article",
+bibentry(
+  bibtype = "Article",
   title   = "OneMap: software for genetic mapping in outcrossing species",
   author  = c(
-    person("Guilherme R. A.", "Margarido"),
+    person("G. R. A.", "Margarido"),
     person("A. P.",           "Souza"),
     person("A. A. F.",        "Garcia")
   ),
@@ -13,13 +13,13 @@ citEntry(
   year    = "2007",
   volume  = "144",
   number  = "3",
-  pages   = "78-79",
+  pages   = "78–79",
   doi     = "10.1111/j.2007.0018-0661.02000.x"
 )
 
 ## 2. Best practices paper (for OneMap ≥ 2.0)
-citEntry(
-  entry   = "Article",
+bibentry(
+  bibtype = "Article",
   title   = "Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps",
   author  = c(
     person("C. H.",              "Taniguti"),
@@ -43,12 +43,12 @@ citEntry(
 )
 
 ## 3. BatchMap (if using the HMM parallelization)
-citEntry(
-  entry   = "Article",
+bibentry(
+  bibtype = "Article",
   title   = "BatchMap: A parallel implementation of the OneMap R package for fast computation of F1 linkage maps in outcrossing species",
   author  = c(
-    person("B.", "Schiffthaler"),
-    person("C.", "Bernhardsson"),
+    person("B.",    "Schiffthaler"),
+    person("C.",    "Bernhardsson"),
     person("P. K.", "Ingvarsson"),
     person("N. R.", "Street")
   ),
@@ -56,7 +56,7 @@ citEntry(
   year    = "2017",
   volume  = "12",
   number  = "12",
-  pages   = "1-12",
+  pages   = "1–12",
   doi     = "10.1371/journal.pone.0189256"
 )
 
