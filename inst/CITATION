@@ -1,6 +1,6 @@
 citHeader("When using OneMap, please choose and cite appropriately:")
 
-## 1. OneMap original paper
+## 1. OneMap version <= 2.0
 bibentry(
   bibtype = "Article",
   title   = "OneMap: software for genetic mapping in outcrossing species",
@@ -17,7 +17,7 @@ bibentry(
   doi     = "10.1111/j.2007.0018-0661.02000.x"
 )
 
-## 2. Best practices paper (for OneMap ≥ 2.0)
+## 2. OneMap version ≥ 2.0
 bibentry(
   bibtype = "Article",
   title   = "Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps",
@@ -61,7 +61,7 @@ bibentry(
 )
 
 citFooter(
-  "• If you only ran linkage mapping with OneMap, cite Margarido et al. (2007).\n",
-  "• If you used OneMap version > 2.0, also cite Taniguti et al. (2023).\n",
-  "• If you leveraged the HMM parallelization, please cite Schiffthaler et al. (2017)."
+  "• If you used OneMap version < 2.0 cite Margarido et al. (2007).\n",
+  "• If you used OneMap version > 2.0 cite Taniguti et al. (2023).\n",
+  "• If you leveraged the HMM parallelization, please cite also Schiffthaler et al. (2017)."
 )

@@ -3,3 +3,5 @@
 0 errors | 0 warnings | 0 note
 
 * This version better address package citation
+* Removes rebus dependency
+* Change maintainer email
