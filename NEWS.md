@@ -200,3 +200,7 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 # onemap 3.2.2
 
 * Update citation
+
+# onemap 3.2.3
+
+* Remove rebus dependency

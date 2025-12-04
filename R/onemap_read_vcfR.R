@@ -68,7 +68,6 @@
 ##' 
 ##' @seealso \code{read_onemap} for a description of the output object of class onemap.
 ##' 
-##' @importFrom rebus number_range
 ##' @importFrom vcfR read.vcfR extract.gt masplit
 ##' 
 ##' @examples
@@ -185,7 +184,7 @@ onemap_read_vcfR <- function(vcf=NULL,
   # keep only biallelic
   if(only_biallelic | cross != "outcross"){
     if(max.alleles > 1){
-      rx <- number_range(2, max.alleles)
+      rx <- paste0("^(", paste(2:max.alleles, collapse = "|"), ")$")
       rm_multi <- which(apply(GT_matrix, 1, function(x) any(grepl(rx, x))))
       if(length(rm_multi) > 0){
         GT_matrix <- GT_matrix[-rm_multi,]
