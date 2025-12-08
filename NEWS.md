@@ -207,4 +207,4 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 * Removes rebus dependency
 * Removes deprecated R_ext/PrtUtil.h usage
 * Change maintainer email
-
+* Removing statgen.ncsu.edu unavailable server from docs
