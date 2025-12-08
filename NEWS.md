@@ -203,4 +203,8 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 
 # onemap 3.2.3
 
-* Remove rebus dependency
+* This version better address package citation
+* Removes rebus dependency
+* Removes deprecated R_ext/PrtUtil.h usage
+* Change maintainer email
+

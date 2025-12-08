@@ -22,7 +22,7 @@ assign(".map.fun",  "kosambi", envir = .onemapEnv)
   msg <- paste(
     "\n\nSince version 3.2.0, updates to **OneMap** have focused primarily on maintaining accessibility and functionality.\n\n",
     
-    "For more efficient use of computational resources and time, we encourage users—especially those working with large or biallelic datasets—to consider polyploid-focused packages such as **MAPpoly**. ",
+    "For more efficient use of computational resources and time, we encourage users, especially those working with large or biallelic datasets, to consider polyploid-focused packages such as MAPpoly",
     "Although designed for polyploids, MAPpoly often runs faster than OneMap when applied to diploid datasets. ",
     "In particular, we recommend using **MAPpoly instead of OneMap** in the following scenarios involving diploid species:\n\n",
     
