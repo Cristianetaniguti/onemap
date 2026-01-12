@@ -201,10 +201,11 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 
 * Update citation
 
-# onemap 3.2.3
+# onemap 3.2.4
 
 * This version better address package citation
 * Removes rebus dependency
 * Removes deprecated R_ext/PrtUtil.h usage
 * Change maintainer email
+* Update authors order
 * Removing statgen.ncsu.edu unavailable server from docs
