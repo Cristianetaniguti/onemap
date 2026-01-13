@@ -90,9 +90,11 @@ that will guide you through other chapters.
 
 # How to cite
 
+* If you are using OneMap versions < 2.0, please cite:
+
 Margarido, G. R. A., Souza, A. P., &38; Garcia, A. A. F. (2007). OneMap: software for genetic mapping in outcrossing species. Hereditas, 144(3), 78–79. https://doi.org/10.1111/j.2007.0018-0661.02000.x
 
-* If you are using OneMap versions > 2.0, please cite also:
+* If you are using OneMap versions > 2.0, please cite:
 
 Taniguti, C. H.; Taniguti, L. M.; Amadeu, R. R.; Lau, J.; de Siqueira Gesteira, G.; Oliveira, T. de P.; Ferreira, G. C.; Pereira, G. da S.;  Byrne, D.;  Mollinari, M.; Riera-Lizarazu, O.; Garcia, A. A. F. (2023) Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps. GigaScience, 12, giad092. https://doi.org/10.1093/gigascience/giad092
 
