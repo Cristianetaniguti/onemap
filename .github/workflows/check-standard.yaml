@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - cran_v3.2.1
   pull_request:
     branches:
       - main
-      - cran_v3.2.1
 
 name: R-CMD-check
 
