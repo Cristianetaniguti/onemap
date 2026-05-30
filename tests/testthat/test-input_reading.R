@@ -122,7 +122,7 @@ test_that("reading files",{
                  cross = "outcross",
                  mk.types = rep(8,7),
                  dist = 0,
-                 genos = c(4381, 4853, 1173, 793))
+                 genos = c(4392, 4858, 1162, 788))
   
   
   check_read_vcf(df= system.file("extdata/simu_cod_out.vcf.gz", package = "onemap"),
@@ -131,7 +131,7 @@ test_that("reading files",{
                  cross = "outcross",
                  mk.types = rep(8,7),
                  dist = 0,
-                 genos = c(4381, 4801 , 1225, 793))
+                 genos = c(4392, 4790 , 1230, 788))
   
   
   check_read_vcf(df= system.file("extdata/simu_cod_f2.vcf.gz", package = "onemap"),

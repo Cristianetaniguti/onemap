@@ -1,28 +1,28 @@
 Package: onemap
 Title: Construction of Genetic Maps in Experimental Crosses
-Version: 3.2.2
+Version: 3.2.5
 Description: Analysis of molecular marker data from model and non-model systems. 
     For the later, it allows statistical analysis by simultaneously estimating 
     linkage and linkage phases (genetic map construction) according to Wu and 
     colleagues (2002)
     <doi:10.1006/tpbi.2002.1577>. All analysis are based on multi-point 
     approaches using hidden Markov models.
-Authors@R: c(person("Gabriel", 
-                    "Margarido", 
-                    role = "aut"), 
+Authors@R: c(person("Cristiane", 
+                    "Taniguti", 
+                    role=c("aut", "cre"), 
+                    email="chtaniguti@hotmail.com"),
              person("Marcelo", 
                     "Mollinari", 
                     role = "aut"), 
-             person("Cristiane", 
-                    "Taniguti", 
-                    role=c("ctb", "cre"), 
-                    email="cht47@cornell.edu"),
-             person("Getulio", 
-                    "Ferreira", 
-                    role="ctb"),
              person("Rodrigo", 
                     "Amadeu", 
                     role = "ctb"),
+             person("Getulio", 
+                    "Ferreira", 
+                    role="ctb"),
+             person("Gabriel", 
+                    "Margarido", 
+                    role = "aut"), 
              person("Jeekin", 
                     "Lau", 
                     role = "ctb"),
@@ -41,12 +41,6 @@ Authors@R: c(person("Gabriel",
                     "Garcia", 
                     role = c("aut", "ctb"), 
                     email = "augusto.garcia@usp.br"))
-Author: Gabriel Margarido [aut], Marcelo Mollinari [aut], 
-        Cristiane Taniguti [ctb, cre], Getulio Ferreira [ctb], 
-        Rodrigo Amadeu [ctb], Jeekin Lau [ctb], Karl Broman [ctb], 
-        Katharine Preedy [ctb, cph] (MDS ordering algorithm), 
-        Bastian Schiffthaler [ctb, cph] (HMM parallelization),
-        Augusto Garcia [aut, ctb]
 LinkingTo: Rcpp (>= 1.0.0)
 Depends: R (>= 3.6.0)
 Imports: ggplot2 (>= 2.2.1), 
@@ -67,22 +61,21 @@ Imports: ggplot2 (>= 2.2.1),
         ggpubr,
         RColorBrewer,
         dendextend,
-        rebus,
         vcfR (>= 1.6.0)
 Suggests: 
     knitr (>= 1.10),
     rmarkdown,
     testthat,
-    stringr
+    stringr,
+    gatepoints
 VignetteBuilder: knitr
 Encoding: UTF-8
 License: GPL-3
 URL: https://github.com/cristianetaniguti/onemap
 BugReports: https://github.com/Cristianetaniguti/onemap/issues
-Maintainer: Cristiane Taniguti <cht47@cornell.edu>
 Repository: CRAN
 Packaged: 2019-09-22 22:25:43 UTC; cris
 NeedsCompilation: yes
 Date/Publication: 2019-09-22 22:48:07 UTC
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 biocViews:
