@@ -209,3 +209,8 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 * Change maintainer email
 * Update authors order
 * Removing statgen.ncsu.edu unavailable server from docs
+
+# onemap 3.2.5
+
+* Bugfix: map_avoid_unlinked for f2 backcross was searching for unexisting genotype
+* Bugfix: onemap_read_vcfR codification for A.2 markers
