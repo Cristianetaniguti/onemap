@@ -214,3 +214,8 @@ Taniguti, C. H., Taniguti, L. M., Amadeu, R. R., Mollinari, M., Da, G., Pereira,
 
 * Bugfix: map_avoid_unlinked for f2 backcross was searching for unexisting genotype
 * Bugfix: onemap_read_vcfR codification for A.2 markers
+
+# onemap 3.2.6
+
+* Adds a few bug fixes
+* Changes maintainer email address
