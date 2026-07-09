@@ -12,7 +12,7 @@
 
 <meta name="author" content="Statistical Genetics Lab   Department of Genetics   Luiz de Queiroz College of Agriculture   University of São Paulo" />
 
-<meta name="date" content="2025-01-10" />
+<meta name="date" content="2026-07-09" />
 
 <title>Introduction to R</title>
 
@@ -50,8 +50,9 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -342,7 +343,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h4 class="author"><a href="http://statgen.esalq.usp.br">Statistical
 Genetics Lab</a> <br /> Department of Genetics <br /> Luiz de Queiroz
 College of Agriculture <br /> University of São Paulo</h4>
-<h4 class="date">2025-01-10</h4>
+<h4 class="date">2026-07-09</h4>
 
 
 
@@ -354,9 +355,8 @@ map using <em>OneMap</em>.</p>
 it is assumed that the user is running Windows. Users of R under Linux
 or Mac OS should have no difficulty following this tutorial.</p>
 <p>We would like to recommend those new users, instead of using plain R,
-use it through the fantastic software <a href="https://posit.co/products/open-source/rstudio/">RStudio</a>. With
-this package, there is no noticeable difference between operating
-systems.</p>
+use it through the fantastic software RStudio. With this package, there
+is no noticeable difference between operating systems.</p>
 <p>As advertised on the website, <em>RStudio is an integrated
 development environment (IDE) for R. It includes a console,
 syntax-highlighting editor that supports direct code execution, as well
@@ -456,33 +456,31 @@ CRAN as your repository). Yes, it is that easy!</p>
 <p>Returning to the console, you need to load <em>OneMap</em> by
 typing:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">library</span>(onemap)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; Registered S3 method overwritten by &#39;vegan&#39;:</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;   method     from      </span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;   rev.hclust dendextend</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; After version 3.2.0 OneMap updates has been solely for maintaining accessibility and functionality. </span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt;     New feature development and optimization efforts are now being directed toward the </span></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt;     MAPpoly (https://github.com/mmollina/MAPpoly) and MAPpoly2 (https://github.com/mmollina/mappoly2) packages.</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt; MAPpoly is a more robust package designed for constructing linkage maps in polyploid species. Its optimized algorithms also provide improved efficiency for diploid species compared to OneMap. Therefore, we recommend using MAPpoly instead of OneMap in the following scenarios for diploid species:</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; - When working with only biallelic markers (e.g., SNPs).</span></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; - For outcrossing full-sib (F1), F2, or backcross populations.</span></span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; - For datasets with a large number of markers (&gt;5,000).</span></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; - For multi-population datasets (e.g., progeny from multiple parents; see MAPpoly2).</span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt; However, OneMap remains the best choice if you have:</span></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="co">#&gt; - Populations derived from recombinant inbred lines (RILs).</span></span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="co">#&gt; - Datasets with multiallelic or dominant markers.</span></span>
-<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a><span class="co">#&gt; For guidance on best practices in building linkage maps while accounting for genotyping errors, please refer to this publication: </span></span>
-<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a><span class="co">#&gt;     C. H. Taniguti, L. M. Taniguti, R. R. Amadeu, J. Lau, G. de S. Gesteira, T. de P. Oliveira, G. C. Ferreira, </span></span>
-<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a><span class="co">#&gt;     G. da S. Pereira, D. Byrne, M. Mollinari, O. Riera-Lizarazu, A. A. F. Garcia, </span></span>
-<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a><span class="co">#&gt;     Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps, </span></span>
-<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a><span class="co">#&gt;     GigaScience, Volume 12, 2023, giad092, https://doi.org/10.1093/gigascience/giad092</span></span></code></pre></div>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; Registered S3 method overwritten by &#39;lme4&#39;:</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;   method           from</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;   na.action.merMod car</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; Registered S3 method overwritten by &#39;vegan&#39;:</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt;   method     from      </span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt;   rev.hclust dendextend</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt; Since version 3.2.0, updates to **OneMap** have focused primarily on maintaining accessibility and functionality.</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; For more efficient use of computational resources and time, we encourage users, especially those working with large or biallelic datasets, to consider polyploid-focused packages such as MAPpolyAlthough designed for polyploids, MAPpoly often runs faster than OneMap when applied to diploid datasets. In particular, we recommend using **MAPpoly instead of OneMap** in the following scenarios involving diploid species:</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt; - Analyses based solely on biallelic markers (e.g., SNPs).</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; - Outcrossing populations such as full-sib (F1), F2, or backcross designs.</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; - Datasets containing a large number of markers (&gt;5,000).</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; - Multi-population datasets (e.g., progeny derived from multiple parents; see **MAPpoly2**, and **polyOrigin**).</span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; **OneMap** remains the best option when working with:</span></span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="co">#&gt; - Recombinant inbred line (RIL) populations.</span></span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="co">#&gt; - Datasets containing multiallelic or dominant markers.</span></span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="co">#&gt; If you are using OneMap (version 2.0 or later), please refer to the following publication:</span></span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a><span class="co">#&gt; C. H. Taniguti, L. M. Taniguti, R. R. Amadeu, J. Lau, G. de S. Gesteira, T. de P. Oliveira, G. C. Ferreira, G. da S. Pereira, D. Byrne, M. Mollinari, O. Riera-Lizarazu, A. A. F. Garcia, Developing best practices for genotyping-by-sequencing analysis in the construction of linkage maps, GigaScience, Volume 12, 2023, giad092. https://doi.org/10.1093/gigascience/giad092</span></span></code></pre></div>
 <p>Some Linux users reported the error message below:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>ERROR<span class="sc">:</span> dependency ‘tkrplot’ is not available <span class="cf">for</span> package ‘onemap’</span></code></pre></div>
 <p>To fix it, in a terminal (outside R), install
