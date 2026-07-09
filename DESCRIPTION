@@ -10,7 +10,7 @@ Description: Analysis of molecular marker data from model and non-model systems.
 Authors@R: c(person("Cristiane", 
                     "Taniguti", 
                     role=c("aut", "cre"), 
-                    email="chtaniguti@hotmail.com"),
+                    email="ctaniguti@ufl.edu"),
              person("Marcelo", 
                     "Mollinari", 
                     role = "aut"), 

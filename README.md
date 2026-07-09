@@ -17,12 +17,12 @@ The software has been available on CRAN since 2007 ([OneMap on CRAN](https://cra
 It changed substantially after version 2.0, incorporating bug fixes, new features and performance optimization, as described in [Taniguti et al. 2022](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giad092/7330892). 
 Beginning with version 3.2.0 (2024), updates now focus exclusively on maintaining accessibility and functionality.  
 
-For improved efficiency, we now recommend using software developed for polyploids species, such as **MAPpoly**, in the following scenarios involving diploid species:  
+For improved efficiency, we now recommend using software developed for polyploids species, such as [**MAPpoly**](https://github.com/mmollina/MAPpoly), in the following scenarios involving diploid species:  
 
 - When working with only biallelic markers (e.g., SNPs).  
 - For outcrossing full-sib (F1), F2, or backcross populations.  
 - For datasets with a large number of markers (>5,000).  
-- For multi-population datasets (e.g., progeny from multiple parents; see MAPpoly2 and polyOrigin).  
+- For multi-population datasets (e.g., progeny from multiple parents; see [MAPpoly2](https://github.com/mmollina/mappoly2) and [polyOrigin](https://github.com/chaozhi/PolyOrigin.jl)).  
 
 **OneMap** remains the best choice if you have:  
 
