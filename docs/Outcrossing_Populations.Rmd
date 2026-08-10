@@ -2,7 +2,9 @@
 title: "Outcrossing Populations"
 author: "[Statistical Genetics Lab](http://statgen.esalq.usp.br) <br/> Department of Genetics <br/> Luiz de Queiroz College of Agriculture <br/> University of São Paulo"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output:
+  rmdformats::html_clean:
+    highlight: kate
 vignette: >
   %\VignetteIndexEntry{Outcrossing Populations}
   %\VignetteEngine{knitr::rmarkdown}
